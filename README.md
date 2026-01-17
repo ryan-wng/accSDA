@@ -1,23 +1,13 @@
-# Resampling-Based Sparse LDA
+# RE-sLDA: Resampling-Enhanced Sparse LDA for Ordinal Outcomes
+This repository contains the implementation of RE-sLDA, a framework designed to enhance feature selection stability and accuracy when dealing with high-dimensional data and ordinal outcomes. By integrating resampling techniques with Sparse Linear Discriminant Analysis (sLDA), this method identifies robust biomarker signatures that standard sparse models often miss due to selection instability.
 
-## Using a Python implementation of Adaptive and Elastic-Net Sparse Discriminant Analysis (accSDA)  
-Developed by referencing the original **R `accSDA` package**.
+## Key Features
+Ordinal Outcome Optimization: Specifically tuned for categorical outcomes with a natural ordering (e.g., disease severity, treatment response grades).
 
-This repository provides an original Python version of the core algorithms in `accSDA`, including sparse discriminant analysis, elastic-net regularization, ADMM solvers, accelerated proximal gradient methods, and ordinal extensions.
+Resampling-Based Stability: Utilizes bootstrap-based resampling to calculate Variable Inclusion Probabilities (VIP), ensuring the selected features are not artifacts of a single data split.
 
----
+Parallel Computing Support: Fully integrated with doParallel and foreach for high-performance execution on multi-core clusters.
 
-## Overview
-
-Sparse Discriminant Analysis (SDA) is a supervised classification framework designed for **high-dimensional, low-sample-size** data (e.g., genomics, proteomics, imaging).  
-
-This repository implements these ideas **natively in Python**, while preserving the **mathematical structure and convergence behavior** of the original R code.
-
-## Notes
-
-- Numerical linear algebra mirrors R behavior (backsolve, forwardsolve)
-- Convergence criteria and stopping rules are preserved
-- Feature selection behavior matches accSDA outputs under identical seeds
 
 ## Testing
 
